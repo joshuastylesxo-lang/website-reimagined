@@ -26,8 +26,10 @@ function Home() {
   const catalog = useLiveCatalog();
   const topCategories = catalog.filter((c) => !c.parent);
 
-  const mobileTopIds = ["home-services", "cleaning"];
-  const mobileTop = topCategories.filter((c) => mobileTopIds.includes(c.id));
+  const mobileTopIds = ["home-services", "cleaning", "water-tank"];
+  const mobileTop = mobileTopIds
+    .map((id) => topCategories.find((c) => c.id === id))
+    .filter((c): c is (typeof topCategories)[0] => Boolean(c));
   const restCategories = topCategories.filter((c) => !mobileTopIds.includes(c.id));
 
   const renderCard = (c: (typeof topCategories)[0]) => (
