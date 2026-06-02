@@ -26,7 +26,7 @@ function Home() {
   const catalog = useLiveCatalog();
   const topCategories = catalog.filter((c) => !c.parent);
 
-  const mobileTopIds = ["home-services", "cleaning", "water-tank"];
+  const mobileTopIds = ["home-services", "cleaning", "water-tank", "solar"];
   const mobileTop = mobileTopIds
     .map((id) => topCategories.find((c) => c.id === id))
     .filter((c): c is (typeof topCategories)[0] => Boolean(c));
