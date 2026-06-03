@@ -158,9 +158,6 @@ export const catalog: Category[] = [
     parent: "home-services",
     items: [
       { id: "sofa-1", name: "Sofa Cleaning", description: "Per seat deep shampoo cleaning.", original: 500, price: 350, rating: 4.6, image: sofaImg, subcategory: "Sofa Cleaning" },
-      { id: "sofa-7", name: "7 Seater Sofa Set Cleaning", description: "Complete 7-seater set deep clean.", original: 3500, price: 2450, rating: 4.9, image: sofaImg, subcategory: "Sofa Cleaning" },
-      { id: "sofa-5", name: "5 Seater Sofa Set Cleaning", description: "Complete 5-seater set deep clean.", original: 2500, price: 1750, rating: 4.4, image: sofaImg, subcategory: "Sofa Cleaning" },
-      { id: "sofa-6", name: "6 Seater Sofa Set Cleaning", description: "Complete 6-seater set deep clean.", original: 3000, price: 2100, rating: 4.5, image: sofaImg, subcategory: "Sofa Cleaning" },
       { id: "sofa-dewan", name: "Dewan Cleaning", description: "Full dewan shampoo & sanitization.", original: 1500, price: 1200, rating: 4.6, image: sofaImg, subcategory: "Sofa Cleaning" },
       { id: "sofa-cumbed", name: "Sofa Cum Bed Cleaning", description: "Sofa-cum-bed full deep clean.", original: 2000, price: 1450, rating: 4.4, image: sofaImg, subcategory: "Sofa Cleaning" },
 
