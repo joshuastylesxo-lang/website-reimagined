@@ -16,7 +16,15 @@ export const Route = createFileRoute("/home-services")({
 
 function HomeServicesPage() {
   const catalog = useLiveCatalog();
-  const subs = catalog.filter((c) => c.parent === "home-services");
+  const allSubs = catalog.filter((c) => c.parent === "home-services");
+  const order = ["ac", "plumber", "electrician", "solar", "water-tank"];
+  const tailOrder = ["cleaning", "carpenter"];
+  const ordered = [
+    ...order.map((id) => allSubs.find((c) => c.id === id)).filter(Boolean),
+    ...allSubs.filter((c) => !order.includes(c.id) && !tailOrder.includes(c.id)),
+    ...tailOrder.map((id) => allSubs.find((c) => c.id === id)).filter(Boolean),
+  ] as typeof allSubs;
+  const subs = ordered;
   return (
     <div className="pb-16">
       <section className="pt-6 pb-2 sm:pt-10">
