@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLiveCatalog } from "@/hooks/use-live-catalog";
 import { About } from "@/components/site/About";
 import { Reviews } from "@/components/site/Reviews";
+import logoAsset from "@/assets/allfix-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -66,7 +67,22 @@ function Home() {
 
   return (
     <div>
-      <section className="pt-6 pb-4 sm:pt-10 sm:pb-8">
+      <section className="pt-6 pb-2 sm:pt-10 sm:pb-4">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center text-center">
+            <img
+              src={logoAsset.url}
+              alt="AllFix Maintenance Services PVT LIMITED"
+              className="w-full max-w-md sm:max-w-xl lg:max-w-2xl h-auto drop-shadow-xl"
+            />
+            <div className="mt-2 sm:mt-3 text-lg sm:text-2xl lg:text-3xl font-extrabold tracking-[0.25em] text-brand">
+              PVT LIMITED
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pt-2 pb-4 sm:pt-4 sm:pb-8">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10">
             <span className="inline-block text-[11px] font-semibold tracking-[0.2em] uppercase text-brand mb-2">
