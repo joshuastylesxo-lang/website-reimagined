@@ -172,21 +172,6 @@ export function CartDrawer() {
                   <span className="text-brand">Rs {total.toLocaleString()}</span>
                 </div>
               </div>
-              <div className="rounded-xl border border-destructive/30 bg-destructive/5 p-3 space-y-2">
-                <p className="text-[11px] font-bold uppercase tracking-wide text-destructive">Terms &amp; Conditions — Liability Disclaimer</p>
-                <p className="text-xs text-foreground/90 leading-relaxed">{LIABILITY_DISCLAIMER}</p>
-                <label className="flex items-start gap-2 pt-1 cursor-pointer">
-                  <Checkbox
-                    id="accept-terms"
-                    checked={acceptedTerms}
-                    onCheckedChange={(v) => setAcceptedTerms(v === true)}
-                    className="mt-0.5"
-                  />
-                  <span className="text-xs font-semibold text-foreground">
-                    I have read and accept the Terms &amp; Conditions.
-                  </span>
-                </label>
-              </div>
             </div>
             <div className="border-t p-5 space-y-2 bg-background">
               <Button onClick={submit} disabled={submitting || !acceptedTerms} className="w-full h-12 rounded-full bg-brand hover:bg-brand text-brand-foreground font-semibold shadow-glow disabled:opacity-60">
