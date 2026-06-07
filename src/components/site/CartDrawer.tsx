@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { useCart } from "./cart/CartContext";
-import { Checkbox } from "@/components/ui/checkbox";
+
 
 
 export function CartDrawer() {
