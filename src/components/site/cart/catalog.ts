@@ -39,7 +39,7 @@ import acRepairImg from "@/assets/services/ac/repair.jpg";
 import acMountDismountImg from "@/assets/services/ac/mount-dismount.jpg";
 import acDismountImg from "@/assets/services/ac/dismount.jpg";
 import acMdGeneralImg from "@/assets/services/ac/md-general.jpg";
-import homeServicesImg from "@/assets/services/home/home-services.jpg";
+
 import plumberImg from "@/assets/services/home/plumber.jpg";
 import plMixerTap from "@/assets/services/plumber/mixer-tap.jpg";
 import plSingleTap from "@/assets/services/plumber/single-tap.jpg";
