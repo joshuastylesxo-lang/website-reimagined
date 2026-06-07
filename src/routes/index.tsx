@@ -95,20 +95,10 @@ function Home() {
             </p>
           </div>
 
-          {/* Mobile: Home Services + Cleaning Services stacked full-width */}
-          <div className="flex flex-col gap-3 sm:hidden mb-3">
-            {mobileTop.map((c) => renderCard(c))}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
+            {ordered.map((c) => renderCard(c))}
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
-            {restCategories.map((c) => renderCard(c))}
-            {/* On sm+ show the top two cards inside the grid too */}
-            {mobileTop.map((c) => (
-              <div key={c.id} className="hidden sm:block">
-                {renderCard(c)}
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
