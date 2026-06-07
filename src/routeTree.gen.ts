@@ -9,18 +9,12 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as HomeServicesRouteImport } from './routes/home-services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as CategoriesIdRouteImport } from './routes/categories.$id'
 import { Route as AdminLoginRouteImport } from './routes/admin/login'
 
-const HomeServicesRoute = HomeServicesRouteImport.update({
-  id: '/home-services',
-  path: '/home-services',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -50,7 +44,6 @@ const AdminLoginRoute = AdminLoginRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/home-services': typeof HomeServicesRoute
   '/admin/login': typeof AdminLoginRoute
   '/categories/$id': typeof CategoriesIdRoute
   '/admin/': typeof AdminIndexRoute
@@ -58,7 +51,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/home-services': typeof HomeServicesRoute
   '/admin/login': typeof AdminLoginRoute
   '/categories/$id': typeof CategoriesIdRoute
   '/admin': typeof AdminIndexRoute
@@ -67,33 +59,19 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/home-services': typeof HomeServicesRoute
   '/admin/login': typeof AdminLoginRoute
   '/categories/$id': typeof CategoriesIdRoute
   '/admin/': typeof AdminIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/contact'
-    | '/home-services'
-    | '/admin/login'
-    | '/categories/$id'
-    | '/admin/'
+  fullPaths: '/' | '/contact' | '/admin/login' | '/categories/$id' | '/admin/'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/contact'
-    | '/home-services'
-    | '/admin/login'
-    | '/categories/$id'
-    | '/admin'
+  to: '/' | '/contact' | '/admin/login' | '/categories/$id' | '/admin'
   id:
     | '__root__'
     | '/'
     | '/contact'
-    | '/home-services'
     | '/admin/login'
     | '/categories/$id'
     | '/admin/'
@@ -102,7 +80,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  HomeServicesRoute: typeof HomeServicesRoute
   AdminLoginRoute: typeof AdminLoginRoute
   CategoriesIdRoute: typeof CategoriesIdRoute
   AdminIndexRoute: typeof AdminIndexRoute
@@ -110,13 +87,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/home-services': {
-      id: '/home-services'
-      path: '/home-services'
-      fullPath: '/home-services'
-      preLoaderRoute: typeof HomeServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -158,7 +128,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  HomeServicesRoute: HomeServicesRoute,
   AdminLoginRoute: AdminLoginRoute,
   CategoriesIdRoute: CategoriesIdRoute,
   AdminIndexRoute: AdminIndexRoute,
@@ -166,3 +135,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { useCart } from "./cart/CartContext";
 import { Checkbox } from "@/components/ui/checkbox";
-import { LIABILITY_DISCLAIMER } from "@/lib/terms";
+
 
 export function CartDrawer() {
   const { items, count, total, originalTotal, isOpen, setOpen, inc, dec, remove, clear } = useCart();
