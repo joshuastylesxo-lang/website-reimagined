@@ -294,6 +294,9 @@ export const catalog: Category[] = [
         includes: [
           "Dismount indoor & outdoor unit from one place",
           "Mount indoor & outdoor unit to second place",
+          "Mounting of indoor unit",
+          "Mounting of outdoor unit",
+          "AC pipe installation within 10 feet",
         ],
         excludes: [
           "Logistics of AC",
@@ -315,12 +318,18 @@ export const catalog: Category[] = [
           "Dismounting of indoor unit",
           "Dismounting of outdoor unit",
           "AC pipe dismounting",
+          "Mounting of indoor unit",
+          "Mounting of outdoor unit",
+          "AC pipe installation within 10 feet",
         ],
         excludes: [
           "Any type of repair",
           "Any type of material",
+          "Any type of gas",
           "Ladder",
+          "AC pipe installation more than 10 feet",
           "Underground and ceiling piping dismounting",
+          "Underground and ceiling piping",
         ],
       },
       {
@@ -333,6 +342,9 @@ export const catalog: Category[] = [
           "Dismount indoor & outdoor unit from one location",
           "Mount indoor & outdoor unit to second location",
           "Clean indoor & outdoor unit on customer location",
+          "Mounting of indoor unit",
+          "Mounting of outdoor unit",
+          "AC pipe installation within 10 feet",
         ],
         excludes: [
           "Installation of AC pipe more than 10 feet",
