@@ -152,7 +152,7 @@ const r = (min = 4.3, max = 4.9) =>
 export const catalog: Category[] = [
   {
     id: "cleaning",
-    name: "Cleaning Services",
+    name: "Sofa and Carpet Cleaning",
     blurb: "Sofa, carpet, mattress, curtain & deep cleaning — all in one place.",
     image: sofaImg,
     items: [
